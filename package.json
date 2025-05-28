@@ -9,6 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.8.0"
+    "@astrojs/node": "^9.2.2",
+    "@hono/zod-openapi": "^0.19.7",
+    "@scalar/hono-api-reference": "^0.9.1",
+    "astro": "^5.8.0",
+    "hono": "^4.7.10",
+    "zod": "^3.25.32"
   }
 }
