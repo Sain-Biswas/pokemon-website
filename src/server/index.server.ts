@@ -1,6 +1,7 @@
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
-import { routerErrorHandler, routerNotFoundHandler } from "./default.handler";
+import routerNotFoundHandler from "./utility/route-not-found.handler";
+import routerErrorHandler from "./utility/route-error.handler";
 
 const app = new OpenAPIHono({ strict: false })
   .basePath("/api")
