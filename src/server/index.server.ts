@@ -2,6 +2,7 @@ import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
 import routerNotFoundHandler from "./utility/route-not-found.handler";
 import routerErrorHandler from "./utility/route-error.handler";
+import HTTPStatusCodes from "./constant/http-status-codes";
 
 const app = new OpenAPIHono({ strict: false })
   .basePath("/api")
@@ -10,7 +11,7 @@ const app = new OpenAPIHono({ strict: false })
       method: "get",
       path: "/",
       responses: {
-        200: {
+        [HTTPStatusCodes.OK]: {
           content: {
             "application/json": {
               schema: z.object({
@@ -31,7 +32,7 @@ const app = new OpenAPIHono({ strict: false })
           description:
             "Home route - Used to check if Api service is available.",
         },
-        500: {
+        [HTTPStatusCodes.INTERNAL_SERVER_ERROR]: {
           content: {
             "application/json": {
               example: {

@@ -1,4 +1,5 @@
 import type { ErrorHandler } from "hono";
+import HTTPStatusCodes from "../constant/http-status-codes";
 
 const routerErrorHandler: ErrorHandler = (_error, c) =>
   c.json(
@@ -14,7 +15,7 @@ const routerErrorHandler: ErrorHandler = (_error, c) =>
       timestamp: new Date(),
       path: c.req.path,
     },
-    500
+    HTTPStatusCodes.INTERNAL_SERVER_ERROR
   );
 
 export default routerErrorHandler;
