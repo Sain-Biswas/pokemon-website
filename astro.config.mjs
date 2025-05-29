@@ -8,7 +8,7 @@ export default defineConfig({
   adapter: vercel({
     includeFiles: ["pokemon.db"],
     isr: {
-      expiration: Infinity,
+      expiration: false,
     },
   }),
 });
