@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { drizzle } from "drizzle-orm/libsql";
 import schema from "./schema/index.schema";
 import environmentVariables from "../constant/env";

@@ -7,5 +7,8 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   adapter: vercel({
     includeFiles: ["pokemon.db"],
+    isr: {
+      expiration: Infinity,
+    },
   }),
 });

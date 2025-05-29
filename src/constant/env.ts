@@ -1,7 +1,7 @@
 import { z } from "zod/v4";
 
 const environmentVariablesSchema = z.object({
-  DATABASE_URL: z.string(),
+  DATABASE_URL: z.string().default("file:pokemon.db"),
   NODE_ENV: z.enum(["development", "production", "testing"]),
 });
 
