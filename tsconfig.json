@@ -1,5 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist", ".vercel"],
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*" : ["src/assets/*"],
+      "@components/*" : ["src/components/*"],
+      "@database/*" : ["src/database/*"],
+      "@layouts/*" : ["src/layouts/*"],
+      "@lib/*" : ["src/lib/*"],
+      "@server/*" : ["src/server/*"],
+      "@types/*" : ["src/types/*"]
+    }
+  }
 }
